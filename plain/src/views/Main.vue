@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="waxon_tm_main .upper">
+    <div class="waxon_tm_main">
       <h2>Sebastian Blum</h2>
     </div>
 
@@ -30,5 +30,9 @@ export default {
   float: left;
   text-align: center;
   padding: 40px 0px 10px 0px;
+
+  h2 {
+    font-size: 44px;
+  }
 }
 </style>
