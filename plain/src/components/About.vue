@@ -17,15 +17,16 @@
           </div>
           <div class="text">
             <p>
-              I’m Sebastian – A data enthusiast with an academic background in
-              cognitive science and human factors, currently focusing my work on
-              <a href="/mlops" >
-                MLOps
-              </a> and deep learning.
+              I'm Sebastian – A Data and
+              <router-link to="/mlops">MLOps</router-link>
+              Engineer with a background in cognitive science, working across
+              cloud infrastructure, Kubernetes, data engineering, and ML
+              tooling.
             </p>
             <p>
-              I am curious about AI and its various interpretations and
-              implementations in academia and industry.
+              Outside of work, you'll find me doing CrossFit, exploring new
+              places, experimenting in the kitchen, or just being outside
+              getting some fresh air.
             </p>
             <p>
               Want to get in touch? Just drop an email to
@@ -61,9 +62,14 @@ export default {
 </script>
 
 <style scoped>
-a:link {
-  color: rgb(97, 113, 139);
+a,
+a:link,
+a:visited {
+  color: #2d8a8a;
   background-color: transparent;
   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 </style>

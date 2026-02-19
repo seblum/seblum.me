@@ -734,10 +734,8 @@ h6 {
   height: auto;
   clear: both;
   float: left;
-//  margin-bottom: 153px;
-  margin-bottom: 150px; // 203px;
-//  padding-top: 230px;
-  padding-top: 50px; // 100px;  
+  margin-bottom: 130px;
+  padding-top: 30px;
 }
 .waxon_tm_about .about_inner {
   width: 100%;
@@ -2080,9 +2078,8 @@ body.modal {
   height: auto;
   clear: both;
   float: left;
- // background-color: #000;
-  background-color: rgb(139, 139, 139);
-  padding: 60px 0px 30px 0px;
+  background-color: #3a3a3a;
+  padding: 30px 0px 30px 0px;
 }
 .waxon_tm_copyright .copyright_inner {
   width: 100%;
@@ -2098,10 +2095,8 @@ body.modal {
   justify-content: space-between;
 }
 .waxon_tm_copyright .copyright_inner > ul > li {
-  margin: 0px 0px 30px 0px;
-  //width: 25%;
+  margin: 0px;
   float: left;
-  //padding-left: 30px;
 }
 .waxon_tm_copyright .copyright_inner > ul > li span {
   display: block;
@@ -2116,11 +2111,9 @@ body.modal {
 .waxon_tm_copyright .copyright_inner .social ul {
   margin: 0px;
   list-style-type: none;
-  position: relative;
-  top: 4px;
 }
 .waxon_tm_copyright .copyright_inner .social ul li {
-  margin: 0px 20px 0px 0px;
+  margin: 0px 25px 0px 0px;
   display: inline-block;
 }
 .waxon_tm_copyright .copyright_inner .social ul li:last-child {
@@ -2161,8 +2154,8 @@ body.modal {
 }
 .waxon_tm_copyright .copyright_inner .social .svg {
   color: #fff;
-  width: 17px;
-  height: 17px;
+  width: 28px;
+  height: 28px;
   filter: invert(1);
 }
 

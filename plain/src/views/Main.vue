@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="waxon_tm_main .upper">
+    <div class="waxon_tm_main">
       <h2>Sebastian Blum</h2>
     </div>
 
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-//import Header from "../components/StaticHeader.vue";
 //import Slider from "../components/SliderSeven.vue";
 import About from "../components/About.vue";
 //import Contact from "../components/Contact.vue";
@@ -30,6 +29,10 @@ export default {
   clear: both;
   float: left;
   text-align: center;
-  padding: 40px 0px 10px 0px;
+  padding: 50px 0px 20px 0px;
+
+  h2 {
+    font-size: 44px;
+  }
 }
 </style>
