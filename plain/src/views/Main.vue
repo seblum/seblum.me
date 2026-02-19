@@ -10,7 +10,6 @@
 </template>
 
 <script>
-//import Header from "../components/StaticHeader.vue";
 //import Slider from "../components/SliderSeven.vue";
 import About from "../components/About.vue";
 //import Contact from "../components/Contact.vue";
