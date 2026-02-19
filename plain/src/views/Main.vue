@@ -29,7 +29,7 @@ export default {
   clear: both;
   float: left;
   text-align: center;
-  padding: 40px 0px 10px 0px;
+  padding: 50px 0px 20px 0px;
 
   h2 {
     font-size: 44px;
