@@ -2,6 +2,13 @@
   "name": "waxon",
   "version": "1.0.0",
   "private": true,
+  "overrides": {
+    "@achrinza/node-ipc": "9.2.10",
+    "postcss": "^8.4.49",
+    "cross-spawn": "^7.0.6",
+    "serialize-javascript": "7.0.5",
+    "webpack-dev-server": "^5.2.2"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,29 +17,20 @@
   "dependencies": {
     "@mlqt/vue-back-top": "^1.0.8",
     "core-js": "^3.6.5",
-    "gtag": "^1.0.1",
-    "hooper": "^0.3.4",
-    "sass": "^1.32.0",
-    "sass-loader": "^10.1.1",
-    "vee-validate": "^3.4.7",
-    "vue": "^2.6.14",
-    "vue-cool-lightbox": "^2.7.4",
+    "sass": "^1.69.0",
+    "sass-loader": "^13.3.0",
+    "vue": "^2.7.16",
     "vue-gtag": "^1.16.1",
-    "vue-particles": "^1.0.9",
-    "vue-router": "^3.5.1",
-    "vue-scroll-reveal": "^1.0.11",
-    "vue-scrollactive": "^0.9.3",
-    "vue2-touch-events": "^3.2.2",
-    "vuejs-scroll-fixed-header": "^1.0.3"
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "@babel/eslint-parser": "^7.23.10",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "vue-template-compiler": "^2.7.16"
   },
   "eslintConfig": {
     "root": true,
@@ -44,9 +42,12 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser",
+      "requireConfigFile": false
     },
-    "rules": {}
+    "rules": {
+      "vue/multi-word-component-names": "off"
+    }
   },
   "browserslist": [
     "> 1%",

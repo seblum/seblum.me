@@ -12,16 +12,17 @@
 </template>
 
 <script>
+function markLoaded() {
+  document.body.classList.add("loaded");
+}
+
 export default {
   mounted() {
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-    });
-  },
-  destroyed() {
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-    });
+    if (document.readyState === "complete") {
+      markLoaded();
+    } else {
+      window.addEventListener("load", markLoaded, { once: true });
+    }
   },
 };
 </script>
