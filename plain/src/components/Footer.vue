@@ -13,8 +13,8 @@
                   <a
                     :href="social.link"
                     target="_blank"
-                    v-bind:class="EvAnSocials"
-                    @click="EvAnSocials"
+                    rel="noopener noreferrer"
+                    @click="trackSocialClick"
                   >
                     <span class="first"
                       ><img class="svg" :src="social.icon" alt="social icon"
@@ -56,7 +56,7 @@ export default {
     };
   },
   methods: {
-    EvAnSocials() {
+    trackSocialClick() {
       this.$gtag.event("link-socials-click", {
         event_category: "documentation",
         event_label: "Socials link button clicked",

@@ -2,43 +2,43 @@
 
 [![S3 Publish CI](https://github.com/seblum/blum.me/actions/workflows/publish-node-s3-bucket.yml/badge.svg)](https://github.com/seblum/blum.me/actions/workflows/publish-node-s3-bucket.yml)
 
-This repository contains the files for the website [seblum.me](https://www.seblum.me). The website is based on the [Waxon-template](https://themeforest.net/item/waxon-vuejs-personal-portfolio-template/33025103).
+This repository contains the source for [seblum.me](https://www.seblum.me). The site started from the [Waxon Vue portfolio template](https://themeforest.net/item/waxon-vuejs-personal-portfolio-template/33025103) and is now a Vue 3 app built with Vue CLI 5 (webpack), Vue Router 4, and Sass.
 
-## Local Development
+## Requirements
 
-To build and run the website locally, follow these commands:
+- Node.js 18 or newer (LTS recommended; CI uses Node 22)
+- npm 9+
+
+## Local development
+
+All app commands run from the `plain` directory:
 
 ```bash
-# Install npm and node (version 12)
-brew install node@12
-brew unlink node
-brew link node@12
+cd plain
 
-# Navigate to the project folder 'plain'
-cd path/to/your/project/folder/plain
-
-# Project setup
 npm install
-
-# Compiles and hot-reloads for development
-npm run serve
-
-# Compiles and minifies the code for production
-npm run build
+npm run serve    # dev server with hot reload
+npm run build    # production build → plain/dist/
+npm run lint     # ESLint (Vue 3 + eslint-plugin-vue)
 ```
 
-The development server will be accessible at http://localhost:3000/. The production build can be found in the `dist` directory.
+The dev server URL is printed in the terminal (Vue CLI defaults to http://localhost:8080/ unless the port is busy).
+
+## Deployment
+
+Pushes to `master` trigger GitHub Actions: build in `plain/`, upload `dist/` as an artifact, and sync to S3 (see `.github/workflows/publish-node-s3-bucket.yml`). Invalidate or adjust CloudFront as needed after deploy.
 
 ## License
 
-This template is valid under a regular license provided by [Waxon-template](https://themeforest.net/item/waxon-vuejs-personal-portfolio-template/33025103). For further information or detailed license information, please contact the author at *hello@seblum.me*.
+The Waxon template is used under its [ThemeForest license](https://themeforest.net/item/waxon-vuejs-personal-portfolio-template/33025103). For questions, contact [hello@seblum.me](mailto:hello@seblum.me).
 
-## Clear Cloudfront Cache
+## Clear CloudFront cache
 
-For information on clearing the Cloudfront cache, please refer to the [Clear Cloudfront cache documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html).
+See the AWS guide: [Managing how long content stays in the cache](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html).
 
-## Helpful Links
+## Helpful links
 
-- [Vue CLI Deployment Guide](https://cli.vuejs.org/guide/deployment.html)
-- [YouTube Video Tutorial](https://www.youtube.com/watch?v=r55qenPhLP8&ab_channel=ib-themes)
-- [Waxon Documentation](http://ibthemespro.com/docs/waxon/)
+- [Vue 3 documentation](https://vuejs.org/)
+- [Vue CLI deployment](https://cli.vuejs.org/guide/deployment.html)
+- [vue-gtag (Vue 3)](https://github.com/MatteoGabriele/vue-gtag)
+- [Waxon documentation](http://ibthemespro.com/docs/waxon/)

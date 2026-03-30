@@ -30,11 +30,7 @@
             </p>
             <p>
               Want to get in touch? Just drop an email to
-              <a
-                href="mailto:hello@seblum.me"
-                v-bind:class="EvAnMail"
-                @click="EvAnMail"
-              >
+              <a href="mailto:hello@seblum.me" @click="trackMailClick">
                 hello@seblum.me
               </a>
             </p>
@@ -50,7 +46,7 @@
 <script>
 export default {
   methods: {
-    EvAnMail() {
+    trackMailClick() {
       this.$gtag.event("link-email-click", {
         event_category: "documentation",
         event_label: "Email link clicked",

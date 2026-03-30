@@ -1,8 +1,5 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import NotFound from "../views/NotFound.vue";
+import { createRouter, createWebHistory } from "vue-router";
 import Main from "../views/Main.vue";
-Vue.use(VueRouter);
 
 const routes = [
   {
@@ -21,7 +18,7 @@ const routes = [
     },
     beforeEnter() {
       window.location.href = "https://seblum.github.io/mlops-engineering-book/";
-    }
+    },
   },
   {
     path: "/synology",
@@ -31,34 +28,32 @@ const routes = [
     },
     beforeEnter() {
       window.location.href = "https://synology-seblum.de8.quickconnect.to/";
-    }
+    },
   },
   {
-    path: "*",
+    path: "/:pathMatch(.*)*",
     name: "NotFound",
     meta: {
       title: "404",
     },
-    component: NotFound,
-  }
+    component: () =>
+      import(/* webpackChunkName: "not-found" */ "../views/NotFound.vue"),
+  },
 ];
-const router = new VueRouter({
-  mode: "history",
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior(savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
-    } else {
-      return { x: 0, y: 0 };
     }
+    return { left: 0, top: 0 };
   },
 });
 
-router.afterEach((to) => {
-  if (to.meta && to.meta.title) {
-    document.title =
-      "Sebastian Blum";
-  }
+router.afterEach(() => {
+  document.title = "Sebastian Blum";
 });
 
 export default router;
