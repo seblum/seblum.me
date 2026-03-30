@@ -11,6 +11,25 @@ const routes = [
     component: Main,
   },
   {
+    path: "/work",
+    name: "Work",
+    meta: {
+      title: "MLOps Engineering",
+    },
+    beforeEnter() {
+      window.location.href = "https://seblum.github.io/mlops-engineering-book/";
+    },
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    meta: {
+      title: "Contact",
+    },
+    component: () =>
+      import(/* webpackChunkName: "contact" */ "../views/ContactView.vue"),
+  },
+  {
     path: "/mlops",
     name: "MLOps",
     meta: {
