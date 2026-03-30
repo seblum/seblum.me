@@ -5,38 +5,24 @@
         <div class="spinner"></div>
       </div>
     </div>
-    <!-- End Preloader -->
-    <router-view></router-view>
-    <back-top color="#fff" :size="1.2" bottom="5%" :slow="0"> </back-top>
+    <router-view />
+    <BackToTop />
   </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted } from "vue";
+import BackToTop from "./components/BackToTop.vue";
+
 function markLoaded() {
   document.body.classList.add("loaded");
 }
 
-export default {
-  mounted() {
-    if (document.readyState === "complete") {
-      markLoaded();
-    } else {
-      window.addEventListener("load", markLoaded, { once: true });
-    }
-  },
-};
+onMounted(() => {
+  if (document.readyState === "complete") {
+    markLoaded();
+  } else {
+    window.addEventListener("load", markLoaded, { once: true });
+  }
+});
 </script>
-
-<style lang="scss">
-.back-top {
-  z-index: 99;
-  bottom: 4% !important;
-  right: 2% !important;
-}
-.back-top__icon {
-  color: #000 !important;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15) !important;
-  border-radius: 4px !important;
-  font-size: 20px !important;
-}
-</style>

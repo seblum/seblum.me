@@ -1,8 +1,5 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Main from "../views/Main.vue";
-
-Vue.use(VueRouter);
 
 const routes = [
   {
@@ -21,7 +18,7 @@ const routes = [
     },
     beforeEnter() {
       window.location.href = "https://seblum.github.io/mlops-engineering-book/";
-    }
+    },
   },
   {
     path: "/synology",
@@ -31,10 +28,10 @@ const routes = [
     },
     beforeEnter() {
       window.location.href = "https://synology-seblum.de8.quickconnect.to/";
-    }
+    },
   },
   {
-    path: "*",
+    path: "/:pathMatch(.*)*",
     name: "NotFound",
     meta: {
       title: "404",
@@ -43,11 +40,15 @@ const routes = [
       import(/* webpackChunkName: "not-found" */ "../views/NotFound.vue"),
   },
 ];
-const router = new VueRouter({
-  mode: "history",
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return savedPosition || { x: 0, y: 0 };
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { left: 0, top: 0 };
   },
 });
 

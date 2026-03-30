@@ -1,18 +1,19 @@
-import Vue from "vue";
+import { createApp } from "vue";
+import { createGtag } from "vue-gtag";
 import App from "./App.vue";
 import router from "./router";
-import BackTop from "@mlqt/vue-back-top";
 import "./assets/scss/style.scss";
-import VueGtag from "vue-gtag";
 
-Vue.use(VueGtag, {
-  config: { id: "G-E5LD5KD037" },
-});
+const app = createApp(App);
 
-Vue.use(BackTop);
-Vue.config.productionTip = false;
+app.use(router);
+app.use(
+  createGtag({
+    tagId: "G-E5LD5KD037",
+    pageTracker: {
+      router,
+    },
+  })
+);
 
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount("#app");
+app.mount("#app");

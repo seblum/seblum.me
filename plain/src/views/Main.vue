@@ -5,17 +5,18 @@
     </div>
 
     <About />
-    <Footer />
+    <SiteFooter />
   </div>
 </template>
 
 <script>
 import About from "../components/About.vue";
-import Footer from "../components/Footer.vue";
+import SiteFooter from "../components/Footer.vue";
+
 export default {
   components: {
     About,
-    Footer,
+    SiteFooter,
   },
 };
 </script>
