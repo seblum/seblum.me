@@ -36,6 +36,11 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 /* Shell layout (global; Waxon .waxon_tm_all_wrap may set floats — override for flex) */
 .site-root.site-root {
   min-height: 100vh;
@@ -45,17 +50,34 @@ onMounted(() => {
   display: flex;
   min-height: 100vh;
   align-items: stretch;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .site-main {
   flex: 1;
   min-width: 0;
+  width: 100%;
   background: #fafafa;
-  padding: 2rem 1.5rem 3rem 0.65rem;
   box-sizing: border-box;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  padding-left: max(0.4rem, env(safe-area-inset-left, 0px));
 
   @media (max-width: 767px) {
-    padding: 1.25rem 1rem 2rem 0.5rem;
+    padding-top: max(1.875rem, env(safe-area-inset-top, 0px));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom, 0px));
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+  }
+
+  @media (max-width: 380px) {
+    padding-left: max(0.55rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
   }
 }
 
@@ -66,7 +88,7 @@ onMounted(() => {
   margin-right: auto;
   width: 100%;
   box-sizing: border-box;
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   line-height: 1.55;
   font-family: inherit;
   color: #333;

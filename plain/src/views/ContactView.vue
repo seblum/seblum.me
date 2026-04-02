@@ -13,13 +13,11 @@
         hello@seblum.me
       </a>
     </p>
-    <SiteFooter />
   </div>
 </template>
 
 <script setup>
 import { event as gtagEvent } from "vue-gtag";
-import SiteFooter from "../components/Footer.vue";
 
 function trackMailClick() {
   gtagEvent("link-email-click", {
@@ -41,7 +39,7 @@ function trackMailClick() {
   margin: 0 0 1rem;
   padding: 0;
   border: 0;
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -64,6 +62,7 @@ function trackMailClick() {
   font-weight: 600;
   color: #2d8a8a;
   text-decoration: none;
+  overflow-wrap: anywhere;
 
   &:hover {
     text-decoration: underline;

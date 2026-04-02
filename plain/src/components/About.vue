@@ -24,31 +24,10 @@
             getting some fresh air.
           </p>
         </div>
-        <p class="about__cta">
-          <router-link
-            class="about__cta-link"
-            to="/contact"
-            @click="trackContactCta"
-          >
-            Get in touch
-          </router-link>
-        </p>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-import { event as gtagEvent } from "vue-gtag";
-
-function trackContactCta() {
-  gtagEvent("contact-cta-click", {
-    event_category: "engagement",
-    event_label: "Get in touch CTA",
-    value: 1,
-  });
-}
-</script>
 
 <style scoped>
 .about.waxon_tm_about {
@@ -84,7 +63,7 @@ function trackContactCta() {
 
 .about__img {
   display: block;
-  max-width: 456px;
+  max-width: 520px;
   width: 100%;
   height: auto;
   margin: 0;
@@ -93,10 +72,13 @@ function trackContactCta() {
 
 .about__welcome {
   margin: 1.25rem 0 0;
-  font-size: 0.9rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.125rem;
   font-weight: 600;
-  color: #111;
+  letter-spacing: -0.02em;
   line-height: 1.3;
+  color: #111;
 }
 
 .about__body {
@@ -115,23 +97,6 @@ function trackContactCta() {
   margin-bottom: 0;
 }
 
-.about__cta {
-  margin: 1.75rem 0 0;
-}
-
-.about__cta-link {
-  display: inline-block;
-  font-weight: 600;
-  font-size: inherit;
-  padding: 0.5rem 0;
-  border-bottom: 2px solid currentColor;
-  transition: opacity 0.15s ease;
-}
-
-.about__cta-link:hover {
-  opacity: 0.85;
-}
-
 a,
 a:link,
 a:visited {
@@ -141,9 +106,5 @@ a:visited {
 }
 a:hover {
   text-decoration: underline;
-}
-
-.about__cta-link:hover {
-  text-decoration: none;
 }
 </style>
