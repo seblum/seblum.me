@@ -37,10 +37,12 @@ onUnmounted(() => {
 .back-top {
   position: fixed;
   z-index: 99;
-  bottom: 4%;
-  right: 2%;
-  width: 2.4em;
-  height: 2.4em;
+  bottom: calc(4% + env(safe-area-inset-bottom, 0px));
+  right: calc(2% + env(safe-area-inset-right, 0px));
+  width: max(2.4em, 44px);
+  height: max(2.4em, 44px);
+  min-width: 44px;
+  min-height: 44px;
   padding: 0;
   margin: 0;
   border: none;
@@ -49,6 +51,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .back-top__icon {
