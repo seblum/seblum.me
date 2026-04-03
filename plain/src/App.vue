@@ -57,6 +57,8 @@ html {
   }
 }
 
+/* Horizontal inset from the sidebar/main divider matches [.side] padding-right (desktop)
+   and matches [.side] left/right padding on small screens so columns align with header. */
 .site-main {
   flex: 1;
   min-width: 0;
@@ -66,17 +68,17 @@ html {
   padding-top: 3rem;
   padding-bottom: 3rem;
   padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
-  padding-left: max(0.4rem, env(safe-area-inset-left, 0px));
+  padding-left: max(1.35rem, env(safe-area-inset-left, 0px));
 
   @media (max-width: 767px) {
     padding-top: max(1.875rem, env(safe-area-inset-top, 0px));
     padding-bottom: max(2rem, env(safe-area-inset-bottom, 0px));
-    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
     padding-right: max(1rem, env(safe-area-inset-right, 0px));
   }
 
   @media (max-width: 380px) {
-    padding-left: max(0.55rem, env(safe-area-inset-left, 0px));
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
     padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
   }
 }

@@ -5,8 +5,12 @@
         <div class="about__photo">
           <img
             class="about__img"
-            src="../assets/img/about/SEBA_1.png"
+            src="../assets/img/about/sebastian-portrait.jpg"
             alt="Sebastian Blum"
+            width="928"
+            height="1040"
+            decoding="async"
+            fetchpriority="high"
           />
         </div>
         <h2 class="about__welcome">Hi there! 👋🏼</h2>
