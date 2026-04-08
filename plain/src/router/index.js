@@ -40,16 +40,6 @@ const routes = [
     },
   },
   {
-    path: "/synology",
-    name: "Synology",
-    meta: {
-      title: "Synology",
-    },
-    beforeEnter() {
-      window.location.href = "https://synology-seblum.de8.quickconnect.to/";
-    },
-  },
-  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     meta: {
